@@ -38,7 +38,7 @@ total_urls_visited = 0
 extensionList = open('extensions.json',"r")
 extensionList = json.loads(r''+extensionList.read())
 
-ResearchInfrastructures=open('ResearchInfrastructures.json',"r")
+ResearchInfrastructures=open('medicalwebsites.json',"r")
 ResearchInfrastructures = json.loads(r''+ResearchInfrastructures.read())
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -450,7 +450,8 @@ def ingest_metadataFile(metadataFile):
 def envriCrawler():
     counter=1
     for IR in ResearchInfrastructures:
-        if counter<27:
+        # Resume crawling by changing the number of counter. 
+        if counter<0:
             counter=counter+1
             continue
         internal_urls.clear()

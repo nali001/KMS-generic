@@ -14,11 +14,11 @@ import numpy as np
 import json
 import uuid
 import os
-from github import BadCredentialsException
+from github import BadCredentialsException, RateLimitExceededException 
 from github import Github
 import time
 import re
-ACCESS_TOKEN_Github= "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"
+ACCESS_TOKEN_Github= "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" # pathology crawler token in GitHub
 ACCESS_TOKEN_Gitlab= "glpat-RLNz1MhmyeR7jcox_dyA"
 
 # ----------------------------------------------------------------
@@ -127,34 +127,8 @@ def get_most_starred_repos():
 
         # Modify the below set of queries you will get returned notebooks from Github. (7-8 hours to crawer the Github)
         potentialQueries=[
-            "Temperature","Vapour","Wind","Speed","Direction","Aerosols","Properties",
-            "Aerosols","Carbon","Dioxide","Methane","other","Greenhouse","Gases","Cloud","Properties","Ozone","Precursors","for","aerosols","ozone",
-            "Precursors","Clouds","Above-Ground","Biomass","Albedo","Anthropogenic","Greenhouse","Gas","Fluxes","Anthropogenic","Water",
-            "Fire","Fraction","Absorbed","Photosynthetically","Active","Radiation","FAPAR","Glaciers","Groundwater","Ice","Sheets","Ice","Shelves",
-            "Lakes","Land","Cover","Land","Surface","Temperature","Latent","Sensible","Heat","Fluxes","Leaf","Area","Index","LAI","Permafrost",
-            "River","Discharge","Snow","Soil","Carbon","Soil","Moisture","ICOS","SeaDataNet","LifeWatch","AnaEE","ACTRIS","AQUACOSM","ARISE","DANUBIUS-RI","DiSSCo",
-            "workflow","marine","weather","geography","environment","CO2","EISCAT","3D","eLTER","RI","EMBRC",
-            "EMSO","EMPHASIS","EPOS","EUFAR","Euro-Argo","ERIC","EUROFLEETS","EuroGOOS","EUROCHAMP","HEMERA","IAGOS",
-            "INTERACT","IS-ENES","JERICO-RI","SIOS","atmosphere","wave","telecommunication","electronics","plankton","temperature",
-            "Nitrous","birds", "Oxide", "Habitat", "Inbreeding", "Morphology", "Physiology", "Phenology", "Taxonomic", "diversity",
-            "Ecosystem", "Precipitation", "rain","reinforcement learning", "quantum", "decision tree",
-            "decision making", "decision structure", "data mining", "data analysis",
-            "software engineering", "fuzzy", "math", "physics", "chemistry", "logic", "recommender", "lab", "biology", "organic", "green gas",
-            "substance", "particle", "technology", "psychology", "atom", "periodic table", "astronomy", "Biochemistry", "bio", "cycle", "geometry",
-            "Natural", "nature", "volcano", "crust", "lava", "oxygen", "carbon", "density", "gravity", "cell",
-            "Pressure","state", "deep learning", "Ocean","stress","stress","ice","level","height","temperature","Subsurface","temperature","currents","currents", "color",
-            "Sea","salinity","subsurface","salinity","heat","flux","colour","Sound","Phytoplankton","biomass","diversity",
-            "Nutrients","Fish","abundace","Transient","traces","Particulate","matter","Nitrous","oxide","Stable","carbon","isotopes",
-            "Dissolved","organic","carbon","Microbe","biomass","diversity","Invertebrate","abundance","distribution",
-            "Marine","turtles,","birds,","mammals","abundance","distribution","Hard","coral","cover","composition","Seagrass","cover","composition",
-            "Macroalgal","canopy","cover","composition","Mangrove","cover","composition","Inorganic","Carbon","Nitrous","Oxide",
-            "Nutrients","Oxygen","Transient","Tracers","Marine","Habitat","Properties","Genetic","diversity","richness","heterozygosity",
-            "Genetic","differentiation","number","genetic","units","genetic","distance","Effective","population","size","Inbreeding",
-            "Species","distributions","Species","abundances","Morphology","Physiology","Phenology","Movement","Community","abundance",
-            "Taxonomic","phylogenetic","diversity","Trait","diversity","Interaction","diversity","Primary","productivity","Ecosystem","phenology",
-            "Ecosystem","disturbances","Live","cover","fraction","Ecosystem","distribution","Ecosystem","Vertical","Profile","Precipitation",
-            "Pressure","Radiation","budget","Radiation","Budget","Wind","Speed","Direction","Temperature","Vapour",
-            "Earth","Radiation","Budget","Lightning"]
+            "breast", "cancer"]
+
         for query in potentialQueries:
             print ("\n\n------------------- Current query:  " + query.lower() +"  ---------------------\n\n")
             for repo in g.search_repositories(query.lower(),sort="stars", order="desc", language=lang):
@@ -182,3 +156,4 @@ def get_most_starred_repos():
 # ----------------------------------------------------------------
 indexingpipeline()
 # test()
+# get_most_starred_repos()

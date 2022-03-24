@@ -1,0 +1,16 @@
+{
+  "panda": {
+    "id": 1,
+    "url":"https://panda.grand-challenge.org/",
+    "domain": "Medical",
+    "title": "Panda dataset",
+    "acronym":"Panda"
+  }, 
+  "digitalpathology": {
+    "id": 2,
+    "url":"https://digitalpathologyassociation.org/",
+    "domain": "Medical",
+    "title": "Digital pathology",
+    "acronym":"DPA"
+  }
+}
