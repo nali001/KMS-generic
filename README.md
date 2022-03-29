@@ -22,18 +22,30 @@ From the programming perspective:
 + `genericpages`: The main entry point of the search engine, containing a landing page
 
 + `notebookearch`: Notebook search module
-+ `DSS`: Crawler for web pages
++ `webSearch`: Web page searching module, including a crawler and a search engine
++ `DSS`: Crawler for datasets
     - `DSS/crawlerDatasetConfig.json`: Configuration file for the crawler. 
+
+## Web page crawler
++ Configure the crawler: `webSearch/indexingPipeline/medicalwebsites.json`
++ Run the cralwer: 
+```
+cd webSearch/indexingPipeline
+sudo python3 adhoc_crawler.py
+```
+
 
 
 ## Development
 A more detailed explanation for setting up environment: \
 `https://docs.google.com/document/d/1icuUCTjaaa53uFE0tjAv1B3IyfzL57xqe2UeeCIXfEA/edit?usp=sharing`
 + When the search engine goes online, you can use Chrome inspection (F12) to inspect the frontend. 
++ `genericsearch` in the URL is projected to method `genericsearch()` that are defined in `views.py` under various modules. 
 
 ### Django interaction with fronten
-+ request frontend --> Django
-+ render Djano --> frontend
++ `request()`: frontend --> Django
++ `render()`: Djano --> frontend
 
 ### Frontend design
 + https://codedthemes.com/item/category/templates/bootstrap-admin-templates/
++ Landingpage design: 

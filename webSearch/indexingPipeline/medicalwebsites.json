@@ -12,5 +12,33 @@
     "domain": "Medical",
     "title": "Digital pathology",
     "acronym":"DPA"
+  }, 
+  "warwick": {
+    "id": 3,
+    "url":"https://warwick.ac.uk/fac/cross_fac/tia/data/",
+    "domain": "Medical",
+    "title": "Warwick datasets",
+    "acronym":"Warwick datasets"
+  }, 
+  "tcia_histopathology": {
+    "id": 4,
+    "url":"https://www.cancerimagingarchive.net/histopathology-imaging-on-tcia/",
+    "domain": "Medical",
+    "title": "TCIA histopathology",
+    "acronym":"TCIA histopathology"
+  }, 
+  "grand_challenge": {
+    "id": 5,
+    "url":"https://grand-challenge.org/",
+    "domain": "Medical",
+    "title": "The grand challenge",
+    "acronym":"grand-challenge"
+  }, 
+  "clarify_project": {
+    "id": 6,
+    "url":"http://www.clarify-project.eu/",
+    "domain": "Medical",
+    "title": "EU CLARIFY project",
+    "acronym":"EU CLARIFY project"
   }
 }
